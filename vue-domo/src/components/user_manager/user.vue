@@ -8,7 +8,7 @@
     highlight-current-row>
       <el-table-column prop="acc" label="账号" width="180">
       </el-table-column>
-      <el-table-column prop="psd" label="密码" width="180">
+      <el-table-column prop="pwd" label="密码" width="180">
       </el-table-column>
       <el-table-column label="操作">
         <template scope="scope">
@@ -40,7 +40,7 @@
         <el-input v-model="form.acc" auto-complete="off"></el-input>
       </el-form-item>
       <el-form-item label="密码" :label-width="formLabelWidth">
-        <el-input v-model="form.psd" auto-complete="off"></el-input>
+        <el-input v-model="form.pwd" auto-complete="off"></el-input>
         </el-date-picker>
       </el-form-item>
 
@@ -93,7 +93,7 @@ export default {
 	    		rows:this.page.eachpage,
 	    		_id: this.id,
 	    		acc:this.form.acc,
-	    		psd:this.form.psd,
+	    		pwd:this.form.pwd,
 	    	}
 		api.getUser('/admin/update',dota).then((res) => {   		
 			api.getUser('/admin/find', {page:this.page.curpage, rows:this.page.eachpage}).then((res) => {   		

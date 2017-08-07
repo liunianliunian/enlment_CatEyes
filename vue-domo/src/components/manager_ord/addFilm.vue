@@ -57,7 +57,9 @@
 			  action="http://localhost:3000/upload"
 			  :on-preview="handlePreview"
 			  :on-remove="handleRemove"
-			  :auto-upload="false">
+			  :auto-upload="false"
+			  :on-change='change'
+			  multiple>
 			  <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
 			  <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
 			  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
@@ -78,7 +80,7 @@ import Router from "../../router/index.js"
     data() {
       return {
 
-        labelPosition: 'top',
+        labelPosition: 'left',
         form: {
           f_chn: '',
           f_eng: '',
@@ -108,6 +110,9 @@ import Router from "../../router/index.js"
     		})
     		this.form = {}
     	},
+    	change(e,b){
+    		console.log(e+'===='+b)
+    	},
     	back() {
     		Router.push("manager")
     	},
@@ -126,6 +131,9 @@ import Router from "../../router/index.js"
 
 <style>
 	.el-form-item {
-		margin-bottom: 10px;
+		margin-bottom: 5px;
+	}
+	.body {
+		color: black;
 	}
 </style>
