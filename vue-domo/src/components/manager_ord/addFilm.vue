@@ -100,7 +100,7 @@ import Router from "../../router/index.js"
     },
     methods: {
     	sub() {
-    		api.getUser('/test/add', this.form).then((res) => {
+    		api.getUser('/filmmessage/add', this.form).then((res) => {
     		 this.$message({
 		          message: '添加成功',
 		          type: 'success'

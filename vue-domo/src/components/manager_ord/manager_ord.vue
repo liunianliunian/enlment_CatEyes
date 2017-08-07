@@ -213,7 +213,7 @@ import Router from "../../router/index.js"
 	    }
 	  },
 	  created() {
-    		api.getUser('/test/find', {page:this.page.curpage, rows:this.page.eachpage}).then((res) => {   		
+    		api.getUser('/filmmessage/find', {page:this.page.curpage, rows:this.page.eachpage}).then((res) => {   		
     			this.page = res.data
     			// console.log(this.page)
     		})
@@ -234,7 +234,7 @@ import Router from "../../router/index.js"
 	    		f_eng:this.form.f_eng,
 
 	    	}
-	    	api.getUser('/test/update', dota).then((res) => {   		
+	    	api.getUser('/filmmessage/update', dota).then((res) => {   		
 			this.page = res.data
 			console.log(this.page)
 
@@ -249,7 +249,7 @@ import Router from "../../router/index.js"
 	        type: 'warning'
 	      }).then(() => {
 	        var pp = row._id
-	        api.getUser('/test/del', {_id:pp, page:this.page.curpage, rows:this.page.eachpage}).then((res) => {   		
+	        api.getUser('/filmmessage/del', {_id:pp, page:this.page.curpage, rows:this.page.eachpage}).then((res) => {   		
     			this.page = res.data
     		})
 	        this.$message({
@@ -265,7 +265,7 @@ import Router from "../../router/index.js"
 	    },
 	   handleSizeChange(val) {
         // console.log(`每页 ${val} 条`);
-        api.getUser('/test/find', {page:this.page.curpage, rows:val}).then((res) => {   		
+        api.getUser('/filmmessage/find', {page:this.page.curpage, rows:val}).then((res) => {   		
 			this.page = res.data
 			this.page.eachpage = val
 			// console.log(this.page)
@@ -274,7 +274,7 @@ import Router from "../../router/index.js"
       },
 	    handleCurrentChange(val) {
 	      // console.log(`当前页: ${val}`);
-	      api.getUser('/test/find', {page:val, rows:this.page.eachpage}).then((res) => { 
+	      api.getUser('/filmmessage/find', {page:val, rows:this.page.eachpage}).then((res) => { 
 			this.page = res.data
 			this.page.curpage = val
 			// console.log(this.page)
@@ -287,21 +287,21 @@ import Router from "../../router/index.js"
       	console.log(select)
       	switch(select) {
       		case "1":
-	      		api.getUser('/test/find', {f_chn:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
+	      		api.getUser('/filmmessage/find', {f_chn:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
 	      		// console.log(res.data)	
 				this.page = res.data
 				console.log(this.page)
 				});
 			break;
 			case "2":
-				api.getUser('/test/find', {f_perfor:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
+				api.getUser('/filmmessage/find', {f_perfor:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
 	      		// console.log(res.data)	
 				this.page = res.data
 				console.log(this.page)
 				});
 			break;
 			case "3":
-				api.getUser('/test/find', {f_reletime:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
+				api.getUser('/filmmessage/find', {f_reletime:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
 	      		// console.log(inputVal)  	
 				this.page = res.data
 	      		console.log(this.page)	
@@ -319,7 +319,7 @@ import Router from "../../router/index.js"
     	for(var key of this.multipleSelection) {
     		ids.push(key._id)
     	}
-    	api.getUser('/test/del', {ids:ids}).then((res) => {	
+    	api.getUser('/filmmessage/del', {ids:ids}).then((res) => {	
 			this.page = res.data
 		})
 	  },
