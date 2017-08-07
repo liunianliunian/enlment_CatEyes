@@ -38,6 +38,7 @@ import {Post} from '../../api/api.js'
 					console.log(111111)
 					Post('/cinemas/add',{name:this.name,adress:this.region,tel:this.phone}).then((res)=>{
 						console.log(res.data)
+						Route.push('/info/movie')
 					})
 				}
 				
