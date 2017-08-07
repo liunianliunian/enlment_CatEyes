@@ -16,8 +16,12 @@ import match from '../components/cinemaManagement/cinemaManagement.vue'  //院�
 import movie from '../components/movieManagement/movieManagement.vue' //电影院线管理
 import user from '../components/user_manager/user.vue'//用户管理
 
+import addFilm from "../components/manager_ord/addFilm.vue"//资讯电影添加电影
+
 import ceshi from '../components/movieManagement/ceshi.vue'
 import look from '../components/movieManagement/lookFilmHome.vue'
+
+
 
 Vue.use(Router)
 
@@ -81,6 +85,10 @@ export default new Router({
 			path:'look',
 			name:'look',
 			component: look
-		},]
+		},{
+		path:'/info/addFilm',
+		name:'addFilm',
+		component:addFilm
+		}]
 	}]
 })
