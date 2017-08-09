@@ -16,6 +16,9 @@ import match from '../components/cinemaManagement/cinemaManagement.vue'  //院�
 import movie from '../components/movieManagement/movieManagement.vue' //电影院线管理
 import user from '../components/user_manager/user.vue'//用户管理
 
+import ceshi from '../components/movieManagement/ceshi.vue'
+import look from '../components/movieManagement/lookFilmHome.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +73,14 @@ export default new Router({
 			path:'user',
 			name:'user',
 			component: user
+		},{
+			path:'ceshi',
+			name:'ceshi',
+			component: ceshi
+		},{
+			path:'look',
+			name:'look',
+			component: look
 		},]
 	}]
 })
