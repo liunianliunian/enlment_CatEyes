@@ -7,7 +7,7 @@
 		</el-row>
 		<el-row >
 		  <el-col :span="6"  >
-		  	<el-menu router  default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" >
+		  	<el-menu router  :default-openeds='array'default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" >
 		      <el-submenu index="1" >
 		        <template slot="title"><i class="fa fa-vimeo fa-2x vue_xx" ></i>猫眼电影</template>
 		        <el-menu-item-group>
@@ -35,6 +35,11 @@
 <script>
 	export default {
 		name:'info',
+		data(){
+			return{
+				array:['1','2']
+			}
+		},
 		methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);

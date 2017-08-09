@@ -11,8 +11,8 @@
 export default {
   name: 'app',
   mounted(){
-			const a=window.screen.height;
-			const b=window.screen.width;
+			const a=document.body.scollHeight;
+			const b=document.body.scollWidth;
 			const c=document.getElementById('app');
 			c.style.width=b+'px'
 			c.style.height=a+'px'
@@ -23,7 +23,7 @@ export default {
 
 <style>
 #app{
-	background: url('images/timg.jpg') no-repeat center;
+	background-color: #EFF2F7;
 	overflow: hidden;
 }
 </style>
