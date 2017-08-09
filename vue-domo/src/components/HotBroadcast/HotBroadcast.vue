@@ -1,5 +1,6 @@
 <template>
 <div class="basetable">
+  <h1>热映电影</h1>
     <div style="margin-top: 15px;" >
       <el-input placeholder="请输入内容" v-model="input5" style="width:500px">
         <el-select v-model="select" slot="prepend" placeholder="请选择" >
@@ -347,6 +348,9 @@ export default {
 }
 </script>
 <style>
+h1{
+  color: blue;text-align: center;
+}
 .el-select .el-input {
     width: 110px;
   }

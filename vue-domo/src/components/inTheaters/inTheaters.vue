@@ -1,7 +1,7 @@
 <template>
 <div class="basetable">
   <div class="tableMain">
-  	<h1 style="color: #FBFF00">正在上映电影</h1>
+  	<h1 style="color: blue;text-align: center">正在上映电影</h1>
 	<div>
 	  <el-input placeholder="请输入内容" v-model="input5" style="width:500px">
 	    <el-select v-model="select" slot="prepend" placeholder="请选择" @change="hehe">
