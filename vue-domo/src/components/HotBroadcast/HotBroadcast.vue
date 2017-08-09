@@ -212,7 +212,7 @@ export default {
         }
       },
   created(){
-          api.getUser('/test/find',{page:this.page.curpage,rows:this.page.eacpage}).then((res)=>{
+          api.getUser('/hotfilm/find',{page:this.page.curpage,rows:this.page.eacpage}).then((res)=>{
             this.page=res.data
           })
           api.getUser('/film/find',{page:this.pages.curpages,rows:this.pages.eacpages}).then((res)=>{
@@ -229,7 +229,7 @@ export default {
         type: 'warning'
       }).then(() => {
         var a=row._id
-        api.getUser('/test/del',{_id:a}).then((res)=>{
+        api.getUser('/hotfilm/del',{_id:a}).then((res)=>{
           console.log(1546531531)
           this.page=res.data
         });
@@ -246,14 +246,14 @@ export default {
     },
     // 每页
       handleSizeChange(val) {
-          api.getUser('/test/find',{page:this.page.curpage,rows:val}).then((res)=>{
+          api.getUser('/hotfilm/find',{page:this.page.curpage,rows:val}).then((res)=>{
           this.page=res.data
           this.page.eachpage=val
         })
       },
       // 当前页
       handleCurrentChange(val) {
-          api.getUser('/test/find',{page:val,rows:this.page.eachpage}).then((res)=>{
+          api.getUser('/hotfilm/find',{page:val,rows:this.page.eachpage}).then((res)=>{
           this.page=res.data
           this.page.curpage=val
         })
@@ -264,17 +264,17 @@ export default {
         var selectChoose = this.input5
         switch(this.select){
           case "1":
-            api.getUser('/test/find',{f_chn:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
+            api.getUser('/hotfilm/find',{f_chn:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
               this.page=res.data
             });
             break;
           case "2":
-          api.getUser('/test/find',{f_perfor:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
+          api.getUser('/hotfilm/find',{f_perfor:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
             this.page=res.data
           });
           break;
           case "3":
-          api.getUser('/test/find',{f_reletime:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
+          api.getUser('/hotfilm/find',{f_reletime:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
             this.page=res.data
           });
           break;
@@ -287,7 +287,7 @@ export default {
       },  
       // 添加电影的弹窗部分按钮
       addFilmDetail(row){ 
-          api.getUser('/test/add',row).then((res)=>{
+          api.getUser('/hotfilm/add',row).then((res)=>{
           this.page=res.data
         })
       },
@@ -321,7 +321,7 @@ export default {
             page:this.page.curpage,
             rows:this.page.eacpage
           }
-          api.getUser('/test/update',data).then((res)=>{
+          api.getUser('/hotfilm/update',data).then((res)=>{
             this.page=res.data
           })
           this.dialogFormVisible = false
@@ -332,7 +332,7 @@ export default {
         for(var key of this.multipleSelection){
           ids.push(key._id)
         }
-        api.getUser('/test/del',{ids:ids}).then((res)=>{
+        api.getUser('/hotfilm/del',{ids:ids}).then((res)=>{
           this.page = res.data
         })
       },
