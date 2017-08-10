@@ -11,11 +11,11 @@
 export default {
   name: 'app',
   mounted(){
-			const a=document.body.scollHeight;
-			const b=document.body.scollWidth;
+			const a=document.body.scrollHeight;
+			const b=document.body.scrollWidth;
 			const c=document.getElementById('app');
 			c.style.width=b+'px'
-			c.style.height=a+'px'
+		
 		}
 }
 
