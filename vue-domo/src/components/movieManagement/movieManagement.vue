@@ -274,11 +274,9 @@ import Route from '../../router/index.js'
 		      	this.rowId=row._id;
 		      
 		      	Post('/cinemas/find',{submitType:"findJoin",ref:"screens",_id:this.rowId}).then((res)=>{
-
 		      			if(res.data.screens.length>0){
 		      					this.LookSeat=res.data
-		      			}
-		      			
+		      			}	
 		      	})
 		      	this.lookSeat=true;
 		      	// Route.push('/info/look')
@@ -347,7 +345,7 @@ import Route from '../../router/index.js'
 		      	})
 		      	}
 		      	
-		      	// this.dialogFormVisible=false;
+		      	this.dialogFormVisible=false;
 		      },
 		      //模糊查询
 		      getMessThree(){

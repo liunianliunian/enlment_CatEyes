@@ -21,7 +21,9 @@ import addFilm from "../components/manager_ord/addFilm.vue"//资讯电影添加�
 import ceshi from '../components/movieManagement/ceshi.vue'
 import look from '../components/movieManagement/lookFilmHome.vue'
 
+import Cinemas from "../components/cinemaManagement/components/cinemas.vue" //paipian
 
+import movieimg from '../components/movie_manager/movieimg.vue'     //电影管理
 
 Vue.use(Router)
 
@@ -86,9 +88,17 @@ export default new Router({
 			name:'look',
 			component: look
 		},{
-		path:'/info/addFilm',
-		name:'addFilm',
-		component:addFilm
+			path:'/info/addFilm',
+			name:'addFilm',
+			component:addFilm
+		},{
+			path:'cinemas',
+			name:'cinemas',
+			component: Cinemas
+		},{
+			path:'movieimg',
+			name:'movieimg',
+			component: movieimg
 		}]
 	}]
 })

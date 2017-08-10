@@ -8,11 +8,11 @@
 	  <el-col :span="12"></el-col>
 	  <el-col :span="6" id='content'>
 		  	<el-form  label-width="80px" style='margin-top: 40px' >
-			  <el-form-item label="用户名">
-			    <el-input class='input' ></el-input>
+			  <el-form-item label="用户名" >
+			    <el-input class='input'v-model='acc'  placeholder='管理员账号'></el-input>
 			  </el-form-item>
-			  <el-form-item label="密码">
-			    <el-input class='input'></el-input>
+			  <el-form-item label="密码"  >
+			    <el-input class='input'v-model='pwd' placeholder='管理员密码'></el-input>
 			  </el-form-item>
 			</el-form>
 			<el-row >
@@ -30,20 +30,28 @@
 <script>
 
 import Route from '../../router/index.js';
+import {Post} from '../../api/api.js'
 import NProgress from 'nprogress'
 
 	export default {
 		name:'login',
+		data(){
+			return{
+				acc:'',
+				pwd:'',
+			}
+		},
 		methods:{
 			login(){
-				setTimeout(function(){
-					localStorage.isLogin=true;
-					Route.push('/info')
-				},1000)
-				
+				if(this.acc && this.pwd){
+					Post('/admin/find',{acc:this.acc,pwd:this.pwd,addSession:1}).then((res)=>{
+						if(res.data.length>0){
+							Route.push('/info')
+						}
+					})
+				}
 			},
 			reg(){
-				console.log(1)
 				Route.push('/reg')
 			}
 

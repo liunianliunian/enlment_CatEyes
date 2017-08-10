@@ -5,8 +5,8 @@
 			  	后台猫眼管理系统
 				  <el-color-picker></el-color-picker>
 		</el-row>
-		<el-row >
-		  <el-col :span="6"  >
+		<el-row style='height:600px'>
+		  <el-col :span="4"  >
 		  	<el-menu router  :default-openeds='array'default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" >
 		      <el-submenu index="1" >
 		        <template slot="title"><i class="fa fa-vimeo fa-2x vue_xx" ></i>猫眼电影</template>
@@ -24,7 +24,7 @@
 		      </el-submenu>
 		    </el-menu>
 		  </el-col>
-		  <el-col :span="18">
+		  <el-col :span="20">
 		  	<router-view></router-view>
 		  </el-col>
 		</el-row>
@@ -74,5 +74,5 @@
 	.vue_xx{
 			margin-right: 30px;
 		}
-	
+
 </style>
