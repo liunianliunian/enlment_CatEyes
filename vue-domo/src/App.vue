@@ -15,7 +15,7 @@ export default {
 			const b=document.body.scrollWidth;
 			const c=document.getElementById('app');
 			c.style.width=b+'px'
-		
+			c.style.height=a+'px'
 		}
 }
 
