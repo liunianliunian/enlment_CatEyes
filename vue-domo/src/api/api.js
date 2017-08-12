@@ -6,3 +6,4 @@ export const getUser = (col,params) => { return axios.post(`http://localhost:300
 export const Post = (col,params) => { return axios.post(`http://localhost:3000${col}`, params)}
 
 
+export const Get = (col,params) => { return axios.get(`http://localhost:3000${col}`, params)}

@@ -35,7 +35,6 @@ import {Post} from '../../api/api.js'
 			},
 			addFilm(){
 				if(this.name && this.region && this.phone ){
-					console.log(111111)
 					Post('/cinemas/add',{name:this.name,adress:this.region,tel:this.phone}).then((res)=>{
 						console.log(res.data)
 						Route.push('/info/movie')

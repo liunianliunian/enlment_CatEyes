@@ -287,7 +287,6 @@ import Route from '../../router/index.js'
 		      },
 		      //删除座位
 		      lookC(a,b){
-		      	console.log(b)
 		      		Post('/screens/del',{_id:b._id}).then((res)=>{
 
 		      				Post('/cinemas/find',{submitType:"findJoin",ref:"screens",_id:b.type})
@@ -314,7 +313,6 @@ import Route from '../../router/index.js'
 		      lookB(){
 
 		      	if(this.lookSSS && this.seatWWW){
-		      		console.log(111)
 			      	Post('/screens/update',{_id:this.idlook,player:this.lookSSS,seat:this.seatWWW})
 			      	.then((res)=>{
 
@@ -339,7 +337,6 @@ import Route from '../../router/index.js'
 		      },
 		      changedataClick(){
 		      	if(this.form.name && this.form.adress){
-		      		console.log(111111)
 		      		Post('/cinemas/update',{_id:this.id,name:this.form.name,adress:this.form.adress,tel:this.form.tel}).then((res)=>{
 		      		this.page=res.data
 		      	})
@@ -363,10 +360,10 @@ import Route from '../../router/index.js'
 		      	this.lookFilmHome=true;
 		      },
 		      lookClick(){
-		      	console.log(this.rowId)
+		      	console.log(this.seat)
 		      	if(this.look && this.seat){
 		      		
-		      		Post('/screens/add',{ref:'cinemas',refId:{_id:this.rowId},refData:{player:this.look,seat:this.seat}})
+		      		Post('/screens/add',{ref:'cinemas',refId:{_id:this.rowId},refData:{player:this.look,seat:JSON.parse(this.seat)}})
 		      		.then((res)=>{
 		      			Post('/cinemas/find',{submitType:"findJoin",ref:"screens",_id:this.rowId})
 			      				.then((res)=>{

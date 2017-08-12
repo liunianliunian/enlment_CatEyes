@@ -2,7 +2,7 @@
 	<el-row type="flex" class="row-bg">
 	  <el-col :span="24">
 		<div>
-			<el-button type="primary">热映电影</el-button>
+			<el-button type="primary">所有电影</el-button>
 		</div>
 		
 		<el-table
@@ -63,31 +63,9 @@
 		created(){
 			this.getFilm()
 			Post("/data/del",{}).then((res)=>{
-				console.log(res.data)
+				
 			})
-			// Post("/screens/add",{
-			// 	ref:"cinemas",
-			// 	param:{name:"星美影城"},
-			// 	data:{player:"一号厅",seat:[[0,1,1,1,0],[1,1,1,1,1],[0,1,1,1,0]]}
-			// }).then((res)=>{
-			// 	console.log(res.data)
-			// })
 
-			// Post("/show/add",{
-			// 	ref:"screens",
-			// 	refId:{_id:"598987685461db1bd0a9eb6f"},
-			// 	refData:{filmID:"598989ccfecfe1321e031378", time:"12:00"}	
-			// }).then((res)=>{
-			// 	console.log(res.data)
-			// })
-
-			// Post("/cinemas/find",{
-			// 	submitType:"findJoin",
-			// 	ref:"screens",
-			// 	name:"万达影城"
-			// }).then((res)=>{
-			// 	console.log(res.data)
-			// })
 		},
 		data(){
 			return {
@@ -109,7 +87,6 @@
 				})	
 			},
 			handleSizeChange(val) {
-				console.log(val)
 				this.getFilm(this.page.curpage,val)
 		    },
 		    handleCurrentChange(val) {

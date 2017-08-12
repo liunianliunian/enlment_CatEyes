@@ -51,11 +51,7 @@
       width="200"
       height="80">
     </el-table-column>
-<!--     <el-table-column
-      prop="f_perfor"
-      label="演员"
-      width="300">
-    </el-table-column> -->
+
     <el-table-column
       prop="f_look"
       label="想看数"
@@ -98,22 +94,7 @@
       width="200"
       height="80">
     </el-table-column>
- <!--    <el-table-column
-      prop="f_info"
-      label="剧情简介"
-      width="400"
-      height="80">
-    </el-table-column> -->
-  <!--   <el-table-column
-      prop="f_firstpic"
-      label="首页图片"
-      width="200">
-    </el-table-column>
-    <el-table-column
-      prop="f_pic"
-      label="图片"
-      width="200">
-    </el-table-column> -->
+
       <el-table-column label="操作" width="150">
         <template scope="scope" >
        <el-button
@@ -215,14 +196,12 @@ import Router from "../../router/index.js"
 	  created() {
     		api.getUser('/filmmessage/find', {page:this.page.curpage, rows:this.page.eachpage}).then((res) => {   		
     			this.page = res.data
-    			// console.log(this.page)
     		})
     	},
 	  methods: {
 	    handleEdit(row) {
 	        this.id = row._id
 			this.form = row
-	    	console.log(row)
 	      this.dialogFormVisible = true
 	    },
 	    changeInfo() {
@@ -236,7 +215,6 @@ import Router from "../../router/index.js"
 	    	}
 	    	api.getUser('/filmmessage/update', dota).then((res) => {   		
 			this.page = res.data
-			console.log(this.page)
 
 		})
 	    	this.dialogFormVisible = false
@@ -268,43 +246,32 @@ import Router from "../../router/index.js"
         api.getUser('/filmmessage/find', {page:this.page.curpage, rows:val}).then((res) => {   		
 			this.page = res.data
 			this.page.eachpage = val
-			// console.log(this.page)
-
 		})
       },
 	    handleCurrentChange(val) {
-	      // console.log(`当前页: ${val}`);
 	      api.getUser('/filmmessage/find', {page:val, rows:this.page.eachpage}).then((res) => { 
 			this.page = res.data
 			this.page.curpage = val
-			// console.log(this.page)
 		})
 	    },
 	    //按条件模糊搜索
 	    search(row) {
       	var inputVal = this.input5
       	var select = this.select
-      	console.log(select)
       	switch(select) {
       		case "1":
 	      		api.getUser('/filmmessage/find', {f_chn:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
-	      		// console.log(res.data)	
 				this.page = res.data
-				console.log(this.page)
 				});
 			break;
 			case "2":
 				api.getUser('/filmmessage/find', {f_perfor:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
-	      		// console.log(res.data)	
 				this.page = res.data
-				console.log(this.page)
 				});
 			break;
 			case "3":
 				api.getUser('/filmmessage/find', {f_reletime:inputVal, page:this.page.curpage, rows:this.page.eachpage}).then((res) => { 
-	      		// console.log(inputVal)  	
 				this.page = res.data
-	      		console.log(this.page)	
 				});
 				break;
       	}
@@ -326,7 +293,6 @@ import Router from "../../router/index.js"
 	    //获取多项数据的id
 	  handleSelectionChange(val) {
         this.multipleSelection = val;
-        console.log(val)
       },
 	  //复选框
 	  toggleRowSelection(val) {

@@ -213,7 +213,7 @@ export default {
         }
       },
   created(){
-          api.getUser('/infilm/find',{page:this.page.curpage,rows:this.page.eacpage}).then((res)=>{
+          api.getUser('/commingfilm/find',{page:this.page.curpage,rows:this.page.eacpage}).then((res)=>{
             this.page=res.data
           })
           api.getUser('/film/find',{page:this.pages.curpages,rows:this.pages.eacpages}).then((res)=>{
@@ -230,7 +230,7 @@ export default {
         type: 'warning'
       }).then(() => {
         var a=row._id
-        api.getUser('/infilm/del',{_id:a}).then((res)=>{
+        api.getUser('/commingfilm/del',{_id:a}).then((res)=>{
           console.log(1546531531)
           this.page=res.data
         });
@@ -247,14 +247,14 @@ export default {
     },
     // 每页
       handleSizeChange(val) {
-          api.getUser('/infilm/find',{page:this.page.curpage,rows:val}).then((res)=>{
+          api.getUser('/commingfilm/find',{page:this.page.curpage,rows:val}).then((res)=>{
           this.page=res.data
           this.page.eachpage=val
         })
       },
       // 当前页
       handleCurrentChange(val) {
-          api.getUser('/infilm/find',{page:val,rows:this.page.eachpage}).then((res)=>{
+          api.getUser('/commingfilm/find',{page:val,rows:this.page.eachpage}).then((res)=>{
           this.page=res.data
           this.page.curpage=val
         })
@@ -265,17 +265,17 @@ export default {
         var selectChoose = this.input5
         switch(this.select){
           case "1":
-            api.getUser('/infilm/find',{f_chn:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
+            api.getUser('/commingfilm/find',{f_chn:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
               this.page=res.data
             });
             break;
           case "2":
-          api.getUser('/infilm/find',{f_perfor:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
+          api.getUser('/commingfilm/find',{f_perfor:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
             this.page=res.data
           });
           break;
           case "3":
-          api.getUser('/infilm/find',{f_reletime:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
+          api.getUser('/commingfilm/find',{f_reletime:selectChoose,page:this.page.curpage,rows:this.page.eachpage}).then((res)=>{
             this.page=res.data
           });
           break;
@@ -288,7 +288,7 @@ export default {
       },  
       // 添加电影的弹窗部分按钮
       addFilmDetail(row){ 
-          api.getUser('/infilm/add',row).then((res)=>{
+          api.getUser('/commingfilm/add',row).then((res)=>{
           this.page=res.data
         })
       },
@@ -322,7 +322,7 @@ export default {
             page:this.page.curpage,
             rows:this.page.eacpage
           }
-          api.getUser('/infilm/update',data).then((res)=>{
+          api.getUser('/commingfilm/update',data).then((res)=>{
             this.page=res.data
           })
           this.dialogFormVisible = false
@@ -333,7 +333,7 @@ export default {
         for(var key of this.multipleSelection){
           ids.push(key._id)
         }
-        api.getUser('/infilm/del',{ids:ids}).then((res)=>{
+        api.getUser('/commingfilm/del',{ids:ids}).then((res)=>{
           this.page = res.data
         })
       },

@@ -28,8 +28,7 @@
 
 		<el-dialog title="添加上映信息" :visible.sync="dialogFormVisible">
 		   <el-form :model="form">
-   		    <el-form-item label="某一天" :label-width="formLabelWidth">
-		      <!-- <el-input v-model="form.day" auto-complete="off"></el-input> -->
+   		    <el-form-item label="放映日期" :label-width="formLabelWidth">
 		      <el-date-picker auto-complete="off"
 			      v-model="form.day"
 			      type="date"
@@ -38,13 +37,12 @@
 			    </el-date-picker>
 		    </el-form-item>
 		    <el-form-item label="放映时间" :label-width="formLabelWidth">
-		      <!-- <el-input v-model="form.time" auto-complete="off"></el-input> -->
 		        <el-time-select  auto-complete="off"
 				  v-model="form.time"
 				  :picker-options="{
-				    start: '08:30',
-				    step: '00:15',
-				    end: '18:30'
+				    start: '09:00',
+				    step: '00:10',
+				    end: '23:50'
 				  }"
 				  placeholder="选择时间">
 				</el-time-select>
@@ -166,7 +164,6 @@ export default {
   		this.screensVal = id
   	},
   	addMsg(){
-
   		var arr = []	
 		this.temporary.forEach((item)=>{
 			arr.push({
